@@ -1,0 +1,58 @@
+:root {
+  --primary-border: #333848;
+}
+
+.go-back {
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  color: #fff;
+  text-decoration: none;
+  height: 100px;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body,
+input,
+button,
+h2 {
+  font-family: "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  background-color: #101524;
+}
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-box {
+  max-width: 450px;
+  width: 100%;
+  padding: 2rem;
+  background-color: #1d2439;
+  border: 1px solid var(--primary-border);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.login-box h2 {
+  text-align: center;
+}
+input,
+button,
+textarea {
+  outline: none;
+}
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-border);
+  border: none;
+  box-shadow: none;
+}

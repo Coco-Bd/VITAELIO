@@ -1,0 +1,50 @@
+:root {
+  --purple-gradient: linear-gradient(
+    to right,
+    #d78dd2,
+    #b999ee,
+    #9da5e9,
+    #8fa9f0
+  );
+  --primary-color: #d78dd2;
+  --secondary-color: #9da5e9;
+}
+
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ins {
+  background: var(--purple-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-family: "Segoe UI", sans-serif;
+}
+
+button {
+  background: var(--secondary-color);
+}
+
+.Title {
+  width: fit-content;
+  align-self: center;
+  margin-top: 0.5em;
+}
+
+#navbar {
+  display: flex;
+  flex-wrap: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 5em;
+}
+
+@media (max-width: 768px) {
+  .Title {
+    display: none;
+  }
+}
