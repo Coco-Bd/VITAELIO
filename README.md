@@ -22,5 +22,4 @@ This is a simple PHP web application that includes user authentication, session 
 
    ```sh
    git clone https://github.com/yourusername/your-repo.git
-   cd your-repo
    ```
