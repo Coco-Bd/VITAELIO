@@ -1,4 +1,3 @@
-
 <section>
     <div class="error-message">
         <h2>Hey, nothing here, return to civilization</h2><br>

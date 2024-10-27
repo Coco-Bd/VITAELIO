@@ -1,22 +1,16 @@
 <?php
-// Capture the requested URL path
-$request = $_SERVER['REQUEST_URI'];
-$url_components = parse_url($request);
-
-// Initialize variables
-$params = [];
-if (isset($url_components['query'])) {
-    parse_str($url_components['query'], $params);
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
 }
 
-error_log("Requested URL path: " . $request);
 
-// Initialize variables
+$pageParam = isset($_GET['page']) ? $_GET['page'] : '/';
+
+
 $page = '';
 $includeHeaderFooter = true;
 
-// Route the request to the appropriate handler
-$pageParam = $params['page'] ?? '';
+
 switch ($pageParam) {
     case '':
     case 'index':
@@ -32,8 +26,20 @@ switch ($pageParam) {
         $includeHeaderFooter = false;
         break;
     case 'dashboard':
+        
+        if (!isset($_SESSION['user_id'])) {
+            header("Location: /?page=login");
+            exit();
+        }
         $page = 'pages/dashboard.php';
         break;
+    case 'cv_update':
+        $page = 'pages/cv_update.php';
+        break;
+        case 'create_cv':
+        $page = 'pages/create_cv.php';
+        break;
+
     default:
         http_response_code(404);
         $page = 'pages/404.php';
