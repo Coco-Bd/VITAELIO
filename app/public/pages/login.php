@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="password">Password</label>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <p class="error"><?php echo $login; ?></p>
-            <button type="submit" class="contrast">Log In</button>
+            <button type="submit">Log In</button>
         </form>
     </section>
 </main>

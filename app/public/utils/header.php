@@ -15,7 +15,7 @@ $logoutIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" wid
             </a>
             <ul>
                 <li class="hide-before-sm">
-                    <a class="contrast" data-discover="true" href="/">CV Creator</a>
+                    <a class="contrast" data-discover="true" href="/?page=portfolio">Portfolio</a>
                 </li>
                 <li class="hide-before-sm">
                     <a class="contrast" data-discover="true" href="/?page=dashboard">Dashboard</a>
@@ -25,6 +25,9 @@ $logoutIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" wid
                 </li>
                 <li class="hide-before-sm">
                     <a class="contrast" data-discover="true" href="/?page=login">Log in</a>
+                </li>
+                <li class="hide-before-sm">
+                    <a class="contrast"  data-discover="true" href="/?page=profile">Profile</a>
                 </li>
                 <?php if (isset($_SESSION['user_id'])): ?>
                 <li class="hide-before-sm">

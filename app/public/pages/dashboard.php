@@ -69,6 +69,7 @@ $result = $query->execute();
         border: var(--pico-border-width);
     } & p {
         text-align: center;
+        margin-block: 30px;
     }
 
     #scrollable {
@@ -86,6 +87,9 @@ $result = $query->execute();
     }
     ul {
         padding: 0;
+    }
+    #submit-button {
+        max-width: 150px;
     }
 
 
@@ -105,8 +109,14 @@ $result = $query->execute();
                     <h3><?php echo htmlspecialchars($row['title']); ?></h3>
                     <p id="description_cv"><?php echo htmlspecialchars($row['description']); ?></p>
                     
-                    <a href="/?page=cv_update&id=<?php echo $row['id']; ?>">Edit CV</a>
-                </li>
+                
+                    
+                <form action="/?page=set_cv_id" method="POST" style="display:inline;">
+
+                        <input type="hidden" name="cv_id" value="<?php echo $row['id']; ?>">
+                        <button id="submit-button" type="submit" style="margin-bottom: 0;">Edit CV</button>
+                </form>    
+            </li>
             <?php endwhile; ?>
             </ul>
         </section>

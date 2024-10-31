@@ -8,7 +8,8 @@ $pageParam = isset($_GET['page']) ? $_GET['page'] : '/';
 
 
 $page = '';
-$includeHeaderFooter = true;
+$includeHeader = true;
+$includeFooter = true;
 
 
 switch ($pageParam) {
@@ -19,11 +20,13 @@ switch ($pageParam) {
         break;
     case 'register':
         $page = 'pages/register.php';
-        $includeHeaderFooter = false;
+        $includeHeader = false;
+        $includeFooter = false;
         break;
     case 'login':
         $page = 'pages/login.php';
-        $includeHeaderFooter = false;
+        $includeHeader = false;
+        $includeFooter = false;
         break;
     case 'dashboard':
         
@@ -39,7 +42,20 @@ switch ($pageParam) {
         case 'create_cv':
         $page = 'pages/create_cv.php';
         break;
+         case 'set_cv_id':
+        $page = 'set_cv_id.php';
+        break;
+        case 'contact':
+        $page = 'pages/contact.php';
+        $includeFooter = false;
 
+        break;
+        case 'profile':
+        $page = 'pages/profile.php';
+        break;
+        case 'portfolio':
+        $page = 'pages/portfolio.php';
+        break;
     default:
         http_response_code(404);
         $page = 'pages/404.php';
@@ -50,7 +66,7 @@ switch ($pageParam) {
 error_log("Selected page: " . $page);
 
 // Include the header if needed
-if ($includeHeaderFooter) {
+if ($includeHeader) {
     include __DIR__ . '/utils/header.php';
 }
 
@@ -58,6 +74,6 @@ if ($includeHeaderFooter) {
 include __DIR__ . '/' . $page;
 
 // Include the footer if needed
-if ($includeHeaderFooter) {
+if ($includeFooter) {
     include __DIR__ . '/utils/footer.php';
 }

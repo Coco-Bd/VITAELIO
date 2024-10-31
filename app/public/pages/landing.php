@@ -1,4 +1,4 @@
-<section class="secondary">
+<section class="secondary" style="height: 60dvh;">
     <div
     class="container-fluid"
     style="

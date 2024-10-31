@@ -34,11 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $result = $stmt->execute();
                     if ($result->fetchArray(SQLITE3_ASSOC)) {
                         $error = "Email is already registered!";
-                        error_log("Email is already registered!");
+                        error_log("Email is already registered: " . $email);
                     } else {
-                        $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+                        // Insert the new user into the database
+                        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
                         $stmt = $db->prepare('INSERT INTO users (email, password) VALUES (:email, :password)');
-                        
                         if (!$stmt) {
                             error_log("Failed to prepare INSERT statement: " . $db->lastErrorMsg());
                             $error = "Failed to prepare INSERT statement.";
@@ -48,8 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             $result = $stmt->execute();
 
                             if ($result) {
-                                $error = "Registration successful!";
                                 error_log("Registration successful for email: " . $email);
+                                header('Location: /?page=login');
+                                exit();
                             } else {
                                 error_log("Failed to execute INSERT statement: " . $db->lastErrorMsg());
                                 $error = "Failed to execute INSERT statement.";
@@ -66,6 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <img class="go-back" src="/public/resources/logo.png" alt="logo" onclick="window.location.href = '/'">
     <section class="login-box">
         <h2>Register</h2>
+        
         <form action="/?page=register" method="POST">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your Email" required>
@@ -75,12 +77,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <label for="confirm_password">Confirm Password:</label>
             <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
-
             <?php if (!empty($error)): ?>
-                <p class="error"><?php echo htmlspecialchars($error); ?></p>
+                <p><?php echo htmlspecialchars($error); ?></p>
             <?php endif; ?>
-
-            <button type="submit" class="contrast">Register</button>
+            <input type="submit" value="Register">
         </form>
     </section>
 </main>

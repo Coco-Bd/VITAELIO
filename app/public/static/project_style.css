@@ -1,0 +1,63 @@
+main.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: var(--pico-muted); /* Softer background color */
+  border-radius: var(--pico-border-radius);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--pico-contrast-border); /* Added border */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid var(--pico-contrast-border);
+  border-radius: var(--pico-border-radius);
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #333848;
+}
+
+button[type="button"] {
+  margin-top: 20px;
+  padding: 10px;
+  color: var(--pico-primary-inverse);
+  border: none;
+  border-radius: var(--pico-border-radius);
+  cursor: pointer;
+}
+
+input[type="submit"] {
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: var(--pico-border-radius);
+  cursor: pointer;
+}
+
+.tech-entry {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: var(--pico-muted);
+  border-radius: var(--pico-border-radius);
+}
+
+.tech-entry label {
+  margin-top: 10px;
+}

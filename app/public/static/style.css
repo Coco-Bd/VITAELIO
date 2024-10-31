@@ -26,6 +26,7 @@ h2 {
 html,
 body {
   background-color: #101524;
+  min-height: 80dvh;
 }
 .login-container {
   display: flex;
