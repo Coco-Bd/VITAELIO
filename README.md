@@ -23,3 +23,17 @@ This is a simple PHP web application that includes user authentication, session 
    ```sh
    git clone https://github.com/yourusername/your-repo.git
    ```
+
+## IMGs
+
+![Index](/readmeResources/Screenshot%202024-11-01%20003859.png)
+
+![register](/readmeResources/Screenshot%202024-11-01%20003909.png)
+
+![cv](/readmeResources/Screenshot%202024-11-01%20004051.png)
+
+![cv_update](/readmeResources/Screenshot%202024-11-01%20004119.png)
+
+![profile](/readmeResources/Screenshot%202024-11-01%20004320.png)
+
+![profile with admin + name](/readmeResources/Screenshot%202024-11-01%20004342.png)
