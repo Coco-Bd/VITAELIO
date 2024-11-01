@@ -84,7 +84,7 @@ you should have something like this
 
 ![Lauched](/readmeResources/Screenshot%202024-11-01%20175850.png)
 
-Now, you're free to explore the webapp functionnalities :)
+Now, open a brwoser, type localhost or 127.0.0.1 and press enter. You're now free to explore the webapp functionnalities :)
 
 ## IMGs
 
